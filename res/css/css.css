@@ -1,0 +1,23 @@
+body {
+  margin:0; 
+  padding:0; 
+  background-color: black;
+}
+
+/*
+#film {
+  position: relative;
+  top: 50%;
+  width: 75%;
+  display: block;
+  margin: auto;
+}
+*/
+
+#film{
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%
+}
