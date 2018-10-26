@@ -4,20 +4,13 @@ body {
   background-color: black;
 }
 
-/*
-#film {
-  position: relative;
-  top: 50%;
+.filmContainer {
   width: 75%;
-  display: block;
-  margin: auto;
+  position: relative;
+  left: 12.5%;
+  right: 12.5%;
 }
-*/
 
 #film{
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 75%
+  width: 100%;
 }

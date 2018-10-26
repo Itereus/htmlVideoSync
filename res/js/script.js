@@ -9,7 +9,7 @@ var testTime = document.getElementById("testTime");
 var timerId;
 var updateTime;
 var startTime;
-var unixDate = new Date();
+var unixDate;
 var unixTime;
 
 vid.onclick = function() {playDelayed(vid)};
@@ -19,7 +19,7 @@ function playDelayed(filmKilde) {
     filmKilde.currentTime = getOffSetTime();
     filmKilde.play();
 
-    // Syncronize every 5 seconds
+    // Syncronize every x seconds
     clearInterval(updateTime);
     updateTime = setInterval(function() {
     filmKilde.currentTime = getOffSetTime();
@@ -27,13 +27,14 @@ function playDelayed(filmKilde) {
 
     // Used for debugging
     // Comment out when done
-    updateTimeText(filmKilde);
+    // updateTimeText(filmKilde);
 }
 
 function getOffSetTime() {
     // BELOW: Use milliseconds only?
     // Get the Unix timestamp in milliseconds, convert to seconds. Divide by
     // length of video, in seconds with decimal
+    unixDate = new Date();
     unixTime = (unixDate.getTime() / 1000) / videoTotalTime;
     // Remove everything before decimal. We're only interested in the part before a whole number
     unixTime = unixTime - Math.floor(unixTime);
